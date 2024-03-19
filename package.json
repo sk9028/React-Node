@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "dev": "NODE_ENV=development nodemon index.js",
   "scripts": {
     "start": "node index.js",
+    "backend": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "sk9028",
@@ -13,5 +15,9 @@
     "body-parser": "^1.20.2",
     "express": "^4.18.3",
     "mongoose": "^8.2.2"
+  },
+  "devDependencies": {
+    "_commnet" : "서버 재시작하지 않아도 알아서 디플로이 시켜주는 기능",
+    "nodemon": "^3.1.0"
   }
 }

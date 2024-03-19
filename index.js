@@ -7,6 +7,13 @@ const app = express()
 // 포트 5000번
 const port = 5000
 
+// key config 불러오기 (따로 배포할건 아니라서 로컬로만 실행될거임)
+// config/key에서 process.env.NODE_ENV 환경변수가 production이면 운영(헤로쿠 유료라서 미사용)
+// config/key에서 process.env.NODE_ENV 환경변수가 production아니면 로컬
+// 터미널에서 node로 들어가서 process.env.NODE_ENV = "dev" 로 지정함
+// 환경변수 삭제는 => delete process.env.NODE_ENV 
+const config = require('./config/key')
+
 // 유저 모델
 const { User } = require("./models/User")
 
@@ -24,14 +31,14 @@ app.use(bodyParser.json())
 //몽고 디비 연결
 const mongoose = require('mongoose')
 
-//몽고 디비 커넥션 연결
-mongoose.connect('mongodb+srv://sk9028:tjdrnr1q2w3e4r@atlascluster.cadgec9.mongodb.net/')
+//몽고 디비 커넥션 연결 (실제 접속정보가 git에 보이면 안되니까 config.mongoURI로 암호화 처리 및 dev.js 이그노어 처리)
+mongoose.connect(config.mongoURI)
 .then(()=> console.log('mongoDB succ'))
 .catch(err=> console.log(err))
 
 // '/' => localhost:5000 입력하면 이게 실행됨.
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello World!zzzzz')
 })
 
 // '/register' => localhost:5000/register 입력하면 이게 실행됨.
