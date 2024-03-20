@@ -5,19 +5,35 @@
   "main": "index.js",
   "dev": "NODE_ENV=development nodemon index.js",
   "scripts": {
+
+    "//":"node 전용 서버 실행",
     "start": "node index.js",
+
+    "//":"nodemon을 이용한 백엔드 서버 실행( 자동 디플로이 기능 탑재 )",
     "backend": "nodemon index.js",
+
+    "//":"테스트 펑션",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "sk9028",
   "license": "ISC",
   "dependencies": {
+
+    "//":"암호화 처리 라이브러리",
+    "bcrypt": "^5.1.1",
+    
+    "//": "body-parser => url 쿼리문자열을 자바스크립트 객체 형태로 변환하거나 객체를 url 쿼리 문자열로 변환하는 기능 extended : true => qs모듈(url형식 name=홍길동&pass..) false => 쿼리스트링 모듈({name : '홍길동', pass..})",
     "body-parser": "^1.20.2",
+
+    "//":"node js를 사용하여 쉽게 서버를 구성할 수 있게 만든 클래스와 라이브러리의 집합체",
     "express": "^4.18.3",
+
+    "//":"노드와 몽고디비를 위한 odm(object data mapping) 라이브러리",
     "mongoose": "^8.2.2"
   },
   "devDependencies": {
-    "_commnet" : "서버 재시작하지 않아도 알아서 디플로이 시켜주는 기능",
+    
+    "//":"서버 재시작하지 않아도 알아서 디플로이 시켜주는 기능",
     "nodemon": "^3.1.0"
   }
 }

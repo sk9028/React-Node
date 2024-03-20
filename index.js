@@ -43,10 +43,9 @@ app.get('/', (req, res) => {
 
 // '/register' => localhost:5000/register 입력하면 이게 실행됨.
 app.post('/register', async (req, res)=>{
-
+  // 회원가입 전 비밀번호를 암호화 하는 작업은 User.js에 있다.(userSchema.pre함수)
   // 회원 가입 할때 필요한 정보들은 클라이언트에서 가져오면
   // 그것들을 DB에 넣어준다.
-  
   const user = new User(req.body)
 
   // 유저 save가 성공일 경우 
