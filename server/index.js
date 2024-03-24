@@ -50,6 +50,12 @@ app.get('/', (req, res) => {
   res.send('Hello World!zzzzz')
 })
 
+// 프론트에서 아래 서비스 경로로 보내면 axios 성공 메시지를 보내준다.
+app.get('/api/hello', (req, res) => {
+  res.send('axios test succ!!')
+})
+
+
 // '/register' => localhost:5000/register 입력하면 이게 실행됨.
 // 회원가입
 app.post('/api/users/register', async (req, res)=>{
