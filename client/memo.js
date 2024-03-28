@@ -54,3 +54,83 @@
 6. proxy 사용 방법은 https://create-react-app.dev/docs/proxying-api-requests-in-development/ 여기에서 하라는대로 하면 됨.
 7. 그래서 src/setupProxy.js 만들어서 코드 복사해서 씀
 */
+
+
+// proxy란?
+/**
+ * 0. 유저 <=> 프록시 서버 <=> 인터넷
+ * 1. 아이피를 프록시 서버에서 임의로 바꿔 버릴 수 있다.
+ * 2. 그래서 인터넷에서 접근하는 사람의 ip를 모르게 된다.
+ * 3. 보내는 데이터도 임의로 바꿀수 있다.
+ * 4. 방화벽, 웹 필터, 캐쉬 데이터, 공유 데이터 제공 기능
+ * 5. 회사에서 직원들이나 집안에서 아이들 인터넷 사용 제어
+ * 6. 캐쉬를 이용해 더 빠른 인터넷 이용 제공
+ * 7. 더 나은 보안 제공
+ * 8. 이용 제한된 사이트 접근 가능
+ */
+
+// Concurrently를 이용해서 프론트, 백 서버 한번에 켜기
+/**
+ * 0. 여러개의 commands를 동시에 작동 시킬 수 있게 해주는 툴
+ * 1. npm install concurrently
+ * 2. package.json에 정의 "dev" : "concurrently \"npm run backend\" \"npm run start --prefix client"
+ * 3. npm run dev 로 실행
+ */
+
+
+// css 프레임 워크
+/**
+ * 0. Material UI
+ * 1. React Bootstrap
+ * 2. Semantic UI
+ * 3. Ant Design - https:ant.design/ - npm install antd - index.js에 이거 추가 => import 'antd/dist/antd.css'
+ * 4. Materialize
+ */
+
+
+// Redux 상태 관리 라이브러리
+/**
+ * 0. Props(properties의 줄임, 컴포넌트간의 연관, 부모 자식 간의 소통때 사용, 부모가 자식한테 1이라는 값을 보내주면 자식은 1밖에 못씀 값을 바꿀려면 부모에서 다시 보내줘야 함.)
+ * 1. State(컴포넌트 안에서 데이터를 교환 또는 전달할 때 사용, 1이라는 값을 계속 바꿔서 사용할 수 있음 , 자동리렌더링 )
+ * 
+ * 이게 Props방식
+ * <ChatMessages
+ *      messages={messages}
+ *      currentMember={member}
+ * >
+ * 
+ * 이게 State 방식
+ * state = {
+ *      message: '',
+ *      attachFile: undefined,
+ *      openMenu : false
+ * }
+ * 
+ * 그래서 Redux는 State를 관리하는 라이브러리임.
+ * 컴포넌트가 여러개면 관리하기 힘든것을 Redux Store에 보관해서 쉽게 관리할 수 있음
+ * 
+ * 한방향 흐름
+ * React Component -> ACTION -> REDUCER -> STORE
+ * 
+ * Redux 사용하기 위한 디펜던시 4가지
+ * npm install redux react-redux redux-promise redux-thunk
+ * 1. redux
+ * 2. react-redux
+ * 3. redux-promise ( dispatch한테 받는 방법이 promise인 경우 필요한 디펜던시-미들웨어)
+ * 4. redux-thunk ( dispatch한테 받는 방법이 funtions인 경우 필요한 디펜던시-미들웨어)
+ */
+
+
+// React vs Reach Hooks
+/**
+ * 리액트는 클래스 컴포넌트와 펑셔날 컴포넌트가 있다.
+ * 클래스는 코드가 길어지고 복잡하고 성능적인 면에서 느리지만 기능을 많이 쓸수있고,
+ * 펑셔날 컴포넌트는 코드가 짧고 간단하고 성능이 클래스보다는 좋지만, 기능은 클래스보다 많이 못씀.
+ * 
+ * 하지만, 리액트 16.8 버전에서 Hooks 업데이트 이후 클래스 컴포넌트 기능들을 펑셔날 컴포넌트에서 쓸 수 있게 됨
+ * 
+ * 훅사용으로 인해서
+ * constructor => const
+ * componentDidMount => useEffect
+ * render => 없어진듯? 그냥 return 쓰면 되는 듯
+ */
