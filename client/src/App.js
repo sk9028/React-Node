@@ -5,6 +5,10 @@ import LandingPage from './components/views/LandingPage/LandingPage'
 import LoginPage from './components/views/LoginPage/LoginPage'
 import RegisterPage from './components/views/RegisterPage/RegisterPage'
 import Auth from './hoc/auth'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../src/css/layout.css';
+import Header from './layout/Header'
+import Footer from './layout/Footer'
 
 function App() {
   // hoc는 function이고 Route element에는 컴포넌트만 들어갈 수 있기 때문에 함수는 들어갈 수 없어 발생하는 에러로 Auth를 미리 감싸줌
@@ -13,12 +17,14 @@ function App() {
   const AuthRegisterPage = Auth(RegisterPage, false);
 
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<AuthLandingPage />}/>
-        <Route path="/login" element={<AuthLoginPage />}/>
-        <Route path="/register" element={<AuthRegisterPage />}/>
-      </Routes>
+    <div class='container'>
+      <Header/>
+        <Routes>
+          <Route path="/" element={<AuthLandingPage />}/>
+          <Route path="/login" element={<AuthLoginPage />}/>
+          <Route path="/register" element={<AuthRegisterPage />}/>
+        </Routes>
+      <Footer/>
     </div>
   );
 }

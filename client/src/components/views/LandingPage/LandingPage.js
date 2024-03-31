@@ -4,6 +4,9 @@ import axios from 'axios'
 //import { response } from 'express' => 이새끼 때문에 갑자기 에러뜨고 안됨; 왜 추가된지 모르겠음
 import { useNavigate } from 'react-router-dom';
 
+import { Form, Button, Container, Row, Col } from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function LandingPage() {
 
   const navigate = useNavigate();
@@ -32,6 +35,7 @@ function LandingPage() {
     }}>
       <h2>시작 페이지</h2>
 
+      <Button variant="primary">Primary</Button>
       <button onClick={onClickHandler}>
           로그아웃
       </button>
