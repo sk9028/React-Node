@@ -5,8 +5,6 @@ import LandingPage from './components/views/LandingPage/LandingPage'
 import LoginPage from './components/views/LoginPage/LoginPage'
 import RegisterPage from './components/views/RegisterPage/RegisterPage'
 import Auth from './hoc/auth'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../src/css/layout.css';
 import Header from './layout/Header'
 import Footer from './layout/Footer'
 

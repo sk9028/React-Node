@@ -108,3 +108,17 @@ body {
 #Password.Dark {
   color: black
 }
+
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.form-landing {
+  max-width: 1200px;
+  padding: 1rem;
+}
