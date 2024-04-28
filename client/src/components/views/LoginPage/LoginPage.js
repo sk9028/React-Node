@@ -5,9 +5,6 @@ import { loginUser } from '../../../_actions/user_action';
 import { useNavigate } from 'react-router-dom';
 import '../../../css/sign-in.css'
 import logo from '../../../img/bootstrap-logo.svg';
-// import '../../../js/color-modes.js'
-import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function LoginPage(props) {
   const navigate = useNavigate();
